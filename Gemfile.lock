@@ -312,6 +312,7 @@ DEPENDENCIES
   tailwindcss-rails
   turbo-rails
   tzinfo-data
+  view_component (~> 3.11)
   view_component-contrib
   web-console
 
