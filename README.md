@@ -1,0 +1,1 @@
+# rails_flash_notifications
