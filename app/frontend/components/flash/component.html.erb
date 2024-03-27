@@ -1,4 +1,4 @@
-<%= tag.div class: 'transition transform duration-200 fixed inset-0 flex items-end justify-center hidden px-4 py-6 pointer-events-none sm:p-6 sm:pt-16 sm:items-start sm:justify-end z-50',
+<%= tag.div class: 'flex items-start w-full p-4 mb-2 text-gray-500 bg-white rounded-lg shadow dark:bg-gray-700 transition transform duration-200 hidden',
             data: {
               controller: :notification,
               notification_delay_value: 4000,
@@ -7,21 +7,19 @@
               transition_leave_from: 'opacity-100 translate-x-0',
               transition_leave_to: 'opacity-0 translate-x-6'
             } do %>
-  <div class="flex items-start w-full pointer-events-auto max-w-sm p-4 text-gray-500 bg-white rounded-lg shadow dark:bg-gray-700">
-    <%= tag.div icon(ICONS[type], size: 24, variant: :solid),
-                class: "#{COLORS[type]} inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg" %>
+  <%= tag.div icon(ICONS[type], size: 24, variant: :solid),
+              class: "#{COLORS[type]} inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg" %>
 
-    <div class="ml-3 w-0 flex-1 pt-0.5">
-      <%= tag.p title, class: 'text-sm font-medium text-gray-900 mb-1 dark:text-gray-100' %>
-      <% message.each do |msg| %>
-        <%= tag.p msg, class: 'text-sm text-gray-900 dark:text-gray-300' %>
-      <% end %>
-    </div>
+  <div class="ml-3 w-0 flex-1 pt-0.5">
+    <%= tag.p title, class: 'text-sm font-medium text-gray-900 mb-1 dark:text-gray-100' %>
+    <% message.each do |msg| %>
+      <%= tag.p msg, class: 'text-sm text-gray-900 dark:text-gray-300' %>
+    <% end %>
+  </div>
 
-    <div class="ml-4 flex-shrink-0 flex h-8 w-8">
-      <%= button_tag icon(:x_mark, classes: 'w-5 h-5 stroke-2'),
-                     data: { action: 'notification#hide' },
-                     class: 'ms-auto bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-500 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:focus:ring-gray-500 dark:text-gray-300 dark:hover:text-white dark:bg-gray-700 dark:hover:bg-gray-700' %>
-    </div>
+  <div class="ml-4 flex-shrink-0 flex h-8 w-8">
+    <%= button_tag icon(:x_mark, classes: 'w-5 h-5 stroke-2'),
+                   data: { action: 'notification#hide' },
+                   class: 'ms-auto bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-500 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:focus:ring-gray-500 dark:text-gray-300 dark:hover:text-white dark:bg-gray-700 dark:hover:bg-gray-700' %>
   </div>
 <% end %>

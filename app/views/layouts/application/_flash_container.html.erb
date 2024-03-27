@@ -1,5 +1,5 @@
-<div id="flash_container" class="relative h-full max-w-5xl mx-auto px-4">
+<%= tag.div id: :flash_container, class: 'z-50 fixed top-4 inset-x-4 sm:left-auto sm:w-full sm:max-w-sm md:right-8 md:top-8' do %>
   <% flash.each do |type, (message, title)| %>
     <%= render Flash::Component.new(message, type:, title:) %>
   <% end %>
-</div>
+<% end %>
